@@ -56,7 +56,7 @@ public class TreeLerp : MonoBehaviour
                 
             //Makes the image grow
             transform.localScale = new Vector2(Mathf.Lerp(minimumScaleX, maximumScaleX, t), Mathf.Lerp(minimumScaleY, maximumScaleY, t));
-            transform.position = new Vector2(Mathf.Lerp(minimumScaleX, maximumScaleX, t), Mathf.Lerp(minimumScaleY, maximumScaleY, t));
+            transform.position = new Vector2(Mathf.Lerp(minimumPosX, maximumPosX, t), Mathf.Lerp(minimumPosY, maximumPosY, t));
 
             //Makes image grow over a set time
             t += t * Time.deltaTime;     
