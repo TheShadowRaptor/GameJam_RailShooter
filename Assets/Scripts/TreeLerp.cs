@@ -7,23 +7,27 @@ public class TreeLerp : MonoBehaviour
     //=====================================Initalize========================================
     //initalize maximum and minimum values of Lerp
 
-    //for X transform value
-    public float minimumX = 0;
-    public float maximumX = 0;
+    //for X transform scale value
+    public float minimumScaleX = 0;
+    public float maximumScaleX = 0;
 
-    //for Y transform value
-    public float minimumY = 0;
-    public float maximumY = 0;
+    //for Y transform scale value
+    public float minimumScaleY = 0;
+    public float maximumScaleY = 0;
+
+    //for X transform scale value
+    public float minimumPosX = 0;
+    public float maximumPosX = 0;
+
+    //for Y transform scale value
+    public float minimumPosY = 0;
+    public float maximumPosY = 0;
 
     //initalize time it takes to complete Lerp
     public float t = 0;
 
     //initalize time reset
     public float timeReset;
-
-    //initalize positon of Lerped Object
-    public float posX;
-    public float posY;
 
     //initalize Lerp bool
     public bool lerp = true;
@@ -51,7 +55,8 @@ public class TreeLerp : MonoBehaviour
             this.renderer.enabled = true;          
                 
             //Makes the image grow
-            transform.localScale = new Vector2(Mathf.Lerp(minimumX, maximumX, t), Mathf.Lerp(minimumY, maximumY, t));
+            transform.localScale = new Vector2(Mathf.Lerp(minimumScaleX, maximumScaleX, t), Mathf.Lerp(minimumScaleY, maximumScaleY, t));
+            transform.position = new Vector2(Mathf.Lerp(minimumScaleX, maximumScaleX, t), Mathf.Lerp(minimumScaleY, maximumScaleY, t));
 
             //Makes image grow over a set time
             t += t * Time.deltaTime;     
