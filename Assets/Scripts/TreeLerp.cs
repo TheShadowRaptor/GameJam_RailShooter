@@ -23,7 +23,7 @@ public class TreeLerp : MonoBehaviour
     public float posY;
 
     //initalize Lerp bool
-    public bool lurp = true;
+    public bool lerp = true;
 
     //initalize Image render
     public SpriteRenderer renderer;
@@ -33,6 +33,7 @@ public class TreeLerp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Grabs the renderer of the sprite
         renderer = GetComponent<SpriteRenderer>();
     }
 
@@ -41,14 +42,14 @@ public class TreeLerp : MonoBehaviour
     {
         //==================================Lerping======================================
         //
-        if (lurp == true)
+        if (lerp == true)
         {
             transform.localScale = new Vector2(Mathf.Lerp(minimumX, maximumX, t), Mathf.Lerp(minimumY, maximumY, t));
 
             t += t * Time.deltaTime;     
         }
 
-        if (lurp == false)
+        if (lerp == false)
         {
 
         }
