@@ -18,6 +18,9 @@ public class TreeLerp : MonoBehaviour
     //initalize time it takes to complete Lerp
     public float t = 0;
 
+    //initalize time reset
+    public float timeReset;
+
     //initalize positon of Lerped Object
     public float posX;
     public float posY;
@@ -45,7 +48,7 @@ public class TreeLerp : MonoBehaviour
         if (lerp == true)
         {
             //Activates renderer
-            this.renderer.enabled = true;
+            this.renderer.enabled = true;          
                 
             //Makes the image grow
             transform.localScale = new Vector2(Mathf.Lerp(minimumX, maximumX, t), Mathf.Lerp(minimumY, maximumY, t));
@@ -59,6 +62,10 @@ public class TreeLerp : MonoBehaviour
         {
             //Deactivates renderer
             this.renderer.enabled = false;
+
+            //resets Lerp
+            t = timeReset;
+
         }
 
         //======================================+=========================================
