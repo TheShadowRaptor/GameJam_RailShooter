@@ -44,6 +44,9 @@ public class TreeLerp : MonoBehaviour
         //Detects if lerp is active
         if (lerp == true)
         {
+            //Activates renderer
+            this.renderer.enabled = true;
+                
             //Makes the image grow
             transform.localScale = new Vector2(Mathf.Lerp(minimumX, maximumX, t), Mathf.Lerp(minimumY, maximumY, t));
 
@@ -54,7 +57,8 @@ public class TreeLerp : MonoBehaviour
         //Detects if lerp is deactivated
         if (lerp == false)
         {
-
+            //Deactivates renderer
+            this.renderer.enabled = false;
         }
 
         //======================================+=========================================
