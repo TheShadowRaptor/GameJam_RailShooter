@@ -41,14 +41,17 @@ public class TreeLerp : MonoBehaviour
     void Update()
     {
         //==================================Lerping======================================
-        //
+        //Detects if lerp is active
         if (lerp == true)
         {
+            //Makes the image grow
             transform.localScale = new Vector2(Mathf.Lerp(minimumX, maximumX, t), Mathf.Lerp(minimumY, maximumY, t));
 
+            //Makes image grow over a set time
             t += t * Time.deltaTime;     
         }
 
+        //Detects if lerp is deactivated
         if (lerp == false)
         {
 
