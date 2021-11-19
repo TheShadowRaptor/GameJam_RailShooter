@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeLerp : MonoBehaviour
+public class Lerp : MonoBehaviour
 {
     //=====================================Initalize========================================
     //initalize maximum and minimum values of Lerp
