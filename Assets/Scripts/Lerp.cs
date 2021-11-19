@@ -24,10 +24,13 @@ public class Lerp : MonoBehaviour
     public float maximumPosY = 0;
 
     //initalize time it takes to complete Lerp
-    public float t = 0;
+    public float lerpTime = 0;
 
     //initalize time reset
-    public float timeReset;
+    public float lerpTimeReset;
+
+    //initalize timer
+    public float timeTillRise;
 
     //initalize Lerp bool
     public bool lerp = true;
@@ -55,11 +58,17 @@ public class Lerp : MonoBehaviour
             this.renderer.enabled = true;          
                 
             //Makes the image grow
-            transform.localScale = new Vector2(Mathf.Lerp(minimumScaleX, maximumScaleX, t), Mathf.Lerp(minimumScaleY, maximumScaleY, t));
-            transform.position = new Vector2(Mathf.Lerp(minimumPosX, maximumPosX, t), Mathf.Lerp(minimumPosY, maximumPosY, t));
+            transform.localScale = new Vector2(Mathf.Lerp(minimumScaleX, maximumScaleX, lerpTime), Mathf.Lerp(minimumScaleY, maximumScaleY, lerpTime));
+            transform.position = new Vector2(Mathf.Lerp(minimumPosX, maximumPosX, lerpTime), Mathf.Lerp(minimumPosY, maximumPosY, lerpTime));
 
             //Makes image grow over a set time
-            t += t * Time.deltaTime;     
+            lerpTime += lerpTime * Time.deltaTime;     
+
+            //Checks if maximum was reached
+            if (this.transform.localScale.x == maximumScaleX && this.transform.localScale.y == maximumScaleY)
+            {
+                lerp = false;
+            }
         }
 
         //Detects if lerp is deactivated
@@ -68,8 +77,23 @@ public class Lerp : MonoBehaviour
             //Deactivates renderer
             this.renderer.enabled = false;
 
+            //Starts Timer
+            timeTillRise =- 1;            
+
             //resets Lerp
-            t = timeReset;
+            lerpTime = lerpTimeReset;
+
+            //Clamps Timer
+            if (timeTillRise < 0)
+            {
+                timeTillRise = 0;
+            }
+
+            //Checks if timer is finished
+            if (timeTillRise == 0)
+            {
+                lerp = true;
+            }
 
         }
 
