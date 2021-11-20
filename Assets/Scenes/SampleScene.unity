@@ -243,15 +243,16 @@ MonoBehaviour:
   maxScaleX: 8
   minScaleY: 0
   maxScaleY: 8
-  minPosX: 2
-  maxPosX: 12
-  minPosY: -2
-  maxPosY: -2
+  minPosX: 0
+  maxPosX: 0
+  minPosY: 0
+  maxPosY: 0
   lerpTime: 0.01
   lerpTimeReset: 0.01
   tillRiseTime: 0.5
   riseTimeReset: 0.5
   lerp: 0
+  isEnemy: 0
   renderer: {fileID: 42469637}
 --- !u!212 &42469637
 SpriteRenderer:
@@ -365,6 +366,7 @@ MonoBehaviour:
   tillRiseTime: 1
   riseTimeReset: 1
   lerp: 0
+  isEnemy: 0
   renderer: {fileID: 173354704}
 --- !u!212 &173354704
 SpriteRenderer:
@@ -469,15 +471,16 @@ MonoBehaviour:
   maxScaleX: -8
   minScaleY: 0
   maxScaleY: -8
-  minPosX: -5
-  maxPosX: -12
-  minPosY: -2
-  maxPosY: -2
+  minPosX: 0
+  maxPosX: 0
+  minPosY: 0
+  maxPosY: 0
   lerpTime: 0.01
   lerpTimeReset: 0.01
   tillRiseTime: 0
   riseTimeReset: 0
   lerp: 0
+  isEnemy: 1
   renderer: {fileID: 431576202}
 --- !u!212 &431576202
 SpriteRenderer:
@@ -674,6 +677,7 @@ MonoBehaviour:
   tillRiseTime: 2
   riseTimeReset: 2
   lerp: 0
+  isEnemy: 0
   renderer: {fileID: 786053041}
 --- !u!212 &786053041
 SpriteRenderer:
@@ -787,6 +791,7 @@ MonoBehaviour:
   tillRiseTime: 2
   riseTimeReset: 2
   lerp: 0
+  isEnemy: 0
   renderer: {fileID: 1339168686}
 --- !u!212 &1339168686
 SpriteRenderer:
@@ -900,6 +905,7 @@ MonoBehaviour:
   tillRiseTime: 1
   riseTimeReset: 1
   lerp: 0
+  isEnemy: 0
   renderer: {fileID: 1360229222}
 --- !u!212 &1360229222
 SpriteRenderer:
@@ -1013,6 +1019,7 @@ MonoBehaviour:
   tillRiseTime: 1.5
   riseTimeReset: 1.5
   lerp: 0
+  isEnemy: 0
   renderer: {fileID: 1393087188}
 --- !u!212 &1393087188
 SpriteRenderer:
@@ -1126,6 +1133,7 @@ MonoBehaviour:
   tillRiseTime: 1.5
   riseTimeReset: 1.5
   lerp: 0
+  isEnemy: 0
   renderer: {fileID: 1547583720}
 --- !u!212 &1547583720
 SpriteRenderer:

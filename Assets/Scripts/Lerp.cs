@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Lerp : MonoBehaviour
 {
+    // Notes:
+    //
+    // Jorden is a weirdo
+    //
     //=====================================Initalize========================================
     //initalize maximum and minimum values of Lerp
 
@@ -44,6 +48,9 @@ public class Lerp : MonoBehaviour
     //initalize Lerp bool
     public bool lerp = false;
 
+    //Checks if sprite is enemy
+    public bool isEnemy;
+
     //initalize Image render
     public SpriteRenderer renderer;
 
@@ -63,15 +70,24 @@ public class Lerp : MonoBehaviour
         //Detects if lerp is active
         if (lerp == true)
         {
-            // Changes maximum based on position
-            if (minPosX > 0)
+            //Checks if sprite is a enemy
+            if (isEnemy == false)
             {
-                maxPosX = minPosX + 15f;
+                // Changes maximum based on position
+                if (minPosX > 0)
+                {
+                    maxPosX = minPosX + 15f;
+                }
+
+                if (minPosX < 0)
+                {
+                    maxPosX = minPosX + -15;
+                }
             }
 
-            if (minPosX < 0)
+            if (isEnemy == true)
             {
-                maxPosX = minPosX + -15;
+                EnemyDest();
             }
 
             //Resets Timer
@@ -127,5 +143,10 @@ public class Lerp : MonoBehaviour
         }
         //======================================+=========================================
         
+        //Enemies Destination
+        void EnemyDest()
+        {
+            maxPosX = 0;
+        }
     }
 }
