@@ -11,6 +11,11 @@ public class Lerp : MonoBehaviour
     //=====================================Initalize========================================
     //initalize maximum and minimum values of Lerp
 
+    //initalize load in time
+    public float loadTime;
+
+    public bool startTime;
+
     //Initalize random range
     public float minPosRangeX;
     public float maxPosRangeX;
@@ -40,7 +45,7 @@ public class Lerp : MonoBehaviour
     public float lerpTimeReset;
 
     //initalize timer
-    public float tillRiseTime;
+    public float tillRiseTime;   
 
     //initalize timerReset
     public float riseTimeReset;
@@ -60,13 +65,42 @@ public class Lerp : MonoBehaviour
     void Start()
     {
         //Grabs the renderer of the sprite
-        renderer = GetComponent<SpriteRenderer>();
+        renderer = GetComponent<SpriteRenderer>();          
     }
 
     // Update is called once per frame
     void Update()
     {
+        //==================================Start Timer======================================
+        if (startTime == true)
+        {
+            //Deactivates renderer
+            this.renderer.enabled = false;
+
+            //resets Lerp
+            lerpTime = lerpTimeReset;
+
+            //Subtracts Timer
+            loadTime = loadTime - 1 * Time.deltaTime;
+
+            //Clamps Timer
+            if (loadTime < 0)
+            {
+                loadTime = 0;
+            }
+
+            //Checks if timer is finished
+            if (loadTime == 0)
+            {
+                startTime = false;
+            }
+        }
+        
+
+        //===============================================================================
+
         //==================================Lerping======================================
+
         //Detects if lerp is active
         if (lerp == true)
         {
@@ -147,6 +181,6 @@ public class Lerp : MonoBehaviour
         void EnemyDest()
         {
             maxPosX = 0;
-        }
+        }                
     }
 }
