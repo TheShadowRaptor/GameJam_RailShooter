@@ -475,8 +475,8 @@ MonoBehaviour:
   maxPosY: -2
   lerpTime: 0.01
   lerpTimeReset: 0.01
-  tillRiseTime: 0.5
-  riseTimeReset: 0.5
+  tillRiseTime: 0
+  riseTimeReset: 0
   lerp: 0
   renderer: {fileID: 431576202}
 --- !u!212 &431576202
