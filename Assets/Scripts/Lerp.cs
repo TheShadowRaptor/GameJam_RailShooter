@@ -7,6 +7,12 @@ public class Lerp : MonoBehaviour
     //=====================================Initalize========================================
     //initalize maximum and minimum values of Lerp
 
+    //Initalize random range
+    public float minPosRangeX;
+    public float maxPosRangeX;
+
+    public float minPosRangeY;
+    public float maxPosRangeY;
     //for X transform scale value
     public float minimumScaleX = 0;
     public float maximumScaleX = 0;
@@ -15,11 +21,11 @@ public class Lerp : MonoBehaviour
     public float minimumScaleY = 0;
     public float maximumScaleY = 0;
 
-    //for X transform scale value
+    //for X transform pos value
     public float minimumPosX = 0;
     public float maximumPosX = 0;
 
-    //for Y transform scale value
+    //for Y transform pos value
     public float minimumPosY = 0;
     public float maximumPosY = 0;
 
@@ -36,7 +42,7 @@ public class Lerp : MonoBehaviour
     public float riseTimeReset;
 
     //initalize Lerp bool
-    public bool lerp = true;
+    public bool lerp = false;
 
     //initalize Image render
     public SpriteRenderer renderer;
@@ -57,50 +63,82 @@ public class Lerp : MonoBehaviour
         //Detects if lerp is active
         if (lerp == true)
         {
+            // Changes maximum based on position
+            PosChange();
+
             //Resets Timer
             tillRiseTime = riseTimeReset;
 
             //Activates renderer
-            this.renderer.enabled = true;          
-                
-            //Makes the image grow
-            transform.localScale = new Vector2(Mathf.Lerp(minimumScaleX, maximumScaleX, lerpTime), Mathf.Lerp(minimumScaleY, maximumScaleY, lerpTime));
-            transform.position = new Vector2(Mathf.Lerp(minimumPosX, maximumPosX, lerpTime), Mathf.Lerp(minimumPosY, maximumPosY, lerpTime));
+            this.renderer.enabled = true;
 
-            //Makes image grow over a set time
-            lerpTime += lerpTime * Time.deltaTime;     
-
-            //Checks if maximum was reached
-            if (this.transform.localScale.x == maximumScaleX && this.transform.localScale.y == maximumScaleY)
+            //Transform Loop
+            while (lerp == true)
             {
-                lerp = false;
+                //Makes the image grow
+                transform.localScale = new Vector2(Mathf.Lerp(minimumScaleX, maximumScaleX, lerpTime), Mathf.Lerp(minimumScaleY, maximumScaleY, lerpTime));
+                transform.position = new Vector2(Mathf.Lerp(minimumPosX, maximumPosX, lerpTime), Mathf.Lerp(minimumPosY, maximumPosY, lerpTime));
+
+                //Makes image grow over a set time
+                lerpTime += lerpTime * Time.deltaTime;
+
+                //Checks if maximum was reached
+                if (this.transform.localScale.x == maximumScaleX && this.transform.localScale.y == maximumScaleY)
+                {
+                    lerp = false;
+                    break;
+                }
             }
+            
         }
 
         //Detects if lerp is deactivated
         if (lerp == false)
         {
+            //Picks a random spawn point
+            maxPosRangeX = 0;
+            minimumPosX = Random.Range(minPosRangeX, maxPosRangeX);
+            minimumPosY = Random.Range(minPosRangeY, maxPosRangeY);
+
             //Deactivates renderer
             this.renderer.enabled = false;
-            
-            //Starts Timer
-            tillRiseTime -= Time.deltaTime;
 
             //resets Lerp
             lerpTime = lerpTimeReset;
 
-            //Clamps Timer
-            if (tillRiseTime < 0)
+            //Timer Loop
+            while (lerp == false)
             {
-                tillRiseTime = 0;
-            }
+                Debug.Log("Timer Loop");
+                //Subtracts Timer
+                tillRiseTime = tillRiseTime - 1 * Time.deltaTime;
 
-            //Checks if timer is finished
-            if (tillRiseTime == 0)
-            {
-                lerp = true;
-            }           
+                //Clamps Timer
+                if (tillRiseTime < 0)
+                {
+                    tillRiseTime = 0;
+                }
+
+                //Checks if timer is finished
+                if (tillRiseTime == 0)
+                {
+                    lerp = true;
+                    break;
+                }
+            }            
         }
         //======================================+=========================================
+        void PosChange()
+        {                      
+            for (int c = 0; c < minPosRangeX; c++)
+            {
+                maxPosRangeX += 5.6f;
+            }
+                               
+            for (int c = 0; c > minPosRangeX; c--)
+            {
+                maxPosRangeX += -5.6f;
+            }                       
+        }
     }
 }
