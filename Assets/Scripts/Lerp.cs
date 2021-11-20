@@ -26,11 +26,14 @@ public class Lerp : MonoBehaviour
     //initalize time it takes to complete Lerp
     public float lerpTime = 0;
 
-    //initalize time reset
+    //initalize lerpTime reset
     public float lerpTimeReset;
 
     //initalize timer
-    public float timeTillRise;
+    public float tillRiseTime;
+
+    //initalize timerReset
+    public float riseTimeReset;
 
     //initalize Lerp bool
     public bool lerp = true;
@@ -54,6 +57,9 @@ public class Lerp : MonoBehaviour
         //Detects if lerp is active
         if (lerp == true)
         {
+            //Resets Timer
+            tillRiseTime = riseTimeReset;
+
             //Activates renderer
             this.renderer.enabled = true;          
                 
@@ -76,28 +82,25 @@ public class Lerp : MonoBehaviour
         {
             //Deactivates renderer
             this.renderer.enabled = false;
-
+            
             //Starts Timer
-            timeTillRise =- 1;            
+            tillRiseTime -= Time.deltaTime;
 
             //resets Lerp
             lerpTime = lerpTimeReset;
 
             //Clamps Timer
-            if (timeTillRise < 0)
+            if (tillRiseTime < 0)
             {
-                timeTillRise = 0;
+                tillRiseTime = 0;
             }
 
             //Checks if timer is finished
-            if (timeTillRise == 0)
+            if (tillRiseTime == 0)
             {
                 lerp = true;
-            }
-
+            }           
         }
-
         //======================================+=========================================
-
     }
 }

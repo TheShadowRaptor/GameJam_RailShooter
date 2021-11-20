@@ -163,7 +163,8 @@ MonoBehaviour:
   maximumPosY: 0
   lerpTime: 0.01
   lerpTimeReset: 0.01
-  timeTillRise: 5
+  tillRiseTime: 0.5
+  riseTimeReset: 0.5
   lerp: 1
   renderer: {fileID: 42469637}
 --- !u!212 &42469637
@@ -271,7 +272,8 @@ MonoBehaviour:
   maximumPosY: 0
   lerpTime: 0.01
   lerpTimeReset: 0.01
-  timeTillRise: 5
+  tillRiseTime: 0.5
+  riseTimeReset: 0.5
   lerp: 1
   renderer: {fileID: 431576202}
 --- !u!212 &431576202
