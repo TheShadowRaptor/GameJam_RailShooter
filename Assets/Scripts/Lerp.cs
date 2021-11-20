@@ -77,9 +77,6 @@ public class Lerp : MonoBehaviour
             //Deactivates renderer
             this.renderer.enabled = false;
 
-            //resets Lerp
-            lerpTime = lerpTimeReset;
-
             //Subtracts Timer
             loadTime = loadTime - 1 * Time.deltaTime;
 
@@ -92,6 +89,7 @@ public class Lerp : MonoBehaviour
             //Checks if timer is finished
             if (loadTime == 0)
             {
+                lerp = false;
                 startTime = false;
             }
         }
