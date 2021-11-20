@@ -236,17 +236,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minPosRangeX: 2
-  maxPosRangeX: 12
+  maxPosRangeX: 7
   minPosRangeY: -2
   maxPosRangeY: -2
-  minimumScaleX: 0
-  maximumScaleX: 8
-  minimumScaleY: 0
-  maximumScaleY: 8
-  minimumPosX: 5
-  maximumPosX: 20
-  minimumPosY: -2
-  maximumPosY: -2
+  minScaleX: 0
+  maxScaleX: 8
+  minScaleY: 0
+  maxScaleY: 8
+  minPosX: 2
+  maxPosX: 12
+  minPosY: -2
+  maxPosY: -2
   lerpTime: 0.01
   lerpTimeReset: 0.01
   tillRiseTime: 0.5
@@ -352,14 +352,14 @@ MonoBehaviour:
   maxPosRangeX: -12
   minPosRangeY: -2
   maxPosRangeY: -2
-  minimumScaleX: 0
-  maximumScaleX: 8
-  minimumScaleY: 0
-  maximumScaleY: 8
-  minimumPosX: -6
-  maximumPosX: -30
-  minimumPosY: -2
-  maximumPosY: -2
+  minScaleX: 0
+  maxScaleX: 0
+  minScaleY: 0
+  maxScaleY: 0
+  minPosX: 0
+  maxPosX: 0
+  minPosY: 0
+  maxPosY: 0
   lerpTime: 0.01
   lerpTimeReset: 0.01
   tillRiseTime: 1
@@ -462,17 +462,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minPosRangeX: -2
-  maxPosRangeX: -12
+  maxPosRangeX: -7
   minPosRangeY: -2
   maxPosRangeY: -2
-  minimumScaleX: 0
-  maximumScaleX: 8
-  minimumScaleY: 0
-  maximumScaleY: 8
-  minimumPosX: -6
-  maximumPosX: -20
-  minimumPosY: -2
-  maximumPosY: -2
+  minScaleX: 0
+  maxScaleX: -8
+  minScaleY: 0
+  maxScaleY: -8
+  minPosX: -5
+  maxPosX: -12
+  minPosY: -2
+  maxPosY: -2
   lerpTime: 0.01
   lerpTimeReset: 0.01
   tillRiseTime: 0.5
@@ -661,14 +661,14 @@ MonoBehaviour:
   maxPosRangeX: 12
   minPosRangeY: -2
   maxPosRangeY: -2
-  minimumScaleX: 0
-  maximumScaleX: 8
-  minimumScaleY: 0
-  maximumScaleY: 8
-  minimumPosX: 6
-  maximumPosX: 30
-  minimumPosY: -2
-  maximumPosY: -2
+  minScaleX: 0
+  maxScaleX: 0
+  minScaleY: 0
+  maxScaleY: 0
+  minPosX: 0
+  maxPosX: 0
+  minPosY: 0
+  maxPosY: 0
   lerpTime: 0.01
   lerpTimeReset: 0.01
   tillRiseTime: 2
@@ -774,14 +774,14 @@ MonoBehaviour:
   maxPosRangeX: -12
   minPosRangeY: -2
   maxPosRangeY: -2
-  minimumScaleX: 0
-  maximumScaleX: 8
-  minimumScaleY: 0
-  maximumScaleY: 8
-  minimumPosX: -6
-  maximumPosX: -30
-  minimumPosY: -2
-  maximumPosY: -2
+  minScaleX: 0
+  maxScaleX: 0
+  minScaleY: 0
+  maxScaleY: 0
+  minPosX: 0
+  maxPosX: 0
+  minPosY: 0
+  maxPosY: 0
   lerpTime: 0.01
   lerpTimeReset: 0.01
   tillRiseTime: 2
@@ -887,14 +887,14 @@ MonoBehaviour:
   maxPosRangeX: 12
   minPosRangeY: -2
   maxPosRangeY: -2
-  minimumScaleX: 0
-  maximumScaleX: 8
-  minimumScaleY: 0
-  maximumScaleY: 8
-  minimumPosX: 6
-  maximumPosX: 30
-  minimumPosY: -2
-  maximumPosY: -2
+  minScaleX: 0
+  maxScaleX: 0
+  minScaleY: 0
+  maxScaleY: 0
+  minPosX: 0
+  maxPosX: 0
+  minPosY: 0
+  maxPosY: 0
   lerpTime: 0.01
   lerpTimeReset: 0.01
   tillRiseTime: 1
@@ -1000,14 +1000,14 @@ MonoBehaviour:
   maxPosRangeX: -12
   minPosRangeY: -2
   maxPosRangeY: -2
-  minimumScaleX: 0
-  maximumScaleX: 8
-  minimumScaleY: 0
-  maximumScaleY: 8
-  minimumPosX: -6
-  maximumPosX: -30
-  minimumPosY: -2
-  maximumPosY: -2
+  minScaleX: 0
+  maxScaleX: 0
+  minScaleY: 0
+  maxScaleY: 0
+  minPosX: 0
+  maxPosX: 0
+  minPosY: 0
+  maxPosY: 0
   lerpTime: 0.01
   lerpTimeReset: 0.01
   tillRiseTime: 1.5
@@ -1113,14 +1113,14 @@ MonoBehaviour:
   maxPosRangeX: 12
   minPosRangeY: -2
   maxPosRangeY: -2
-  minimumScaleX: 0
-  maximumScaleX: 8
-  minimumScaleY: 0
-  maximumScaleY: 8
-  minimumPosX: 6
-  maximumPosX: 30
-  minimumPosY: -2
-  maximumPosY: -2
+  minScaleX: 0
+  maxScaleX: 0
+  minScaleY: 0
+  maxScaleY: 0
+  minPosX: 0
+  maxPosX: 0
+  minPosY: 0
+  maxPosY: 0
   lerpTime: 0.01
   lerpTimeReset: 0.01
   tillRiseTime: 1.5
