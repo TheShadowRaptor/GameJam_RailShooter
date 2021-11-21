@@ -64,7 +64,7 @@ public class Health_System : MonoBehaviour
         //just change Input.GetKeyDown to collider of the health pickup if we wanna use that
         if(Input.GetKeyDown(KeyCode.S))
         {
-            hearts = hearts + 1;X
+            hearts = hearts + 1;
             Debug.Log("You healed");
         }
     }
