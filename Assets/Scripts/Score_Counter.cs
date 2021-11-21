@@ -9,6 +9,8 @@ public class Score_Counter : MonoBehaviour
     public TextMeshProUGUI CountText;
     private float Count;
     private float startTime;
+
+
     // Start is called before the first frame update
 
     // attatch the script to the main camera and put the canvas text where it says Count Text
@@ -20,6 +22,7 @@ public class Score_Counter : MonoBehaviour
         SetCountText();
         Count = 0;
         startTime = Time.time;
+  
     }
 
     // Update is called once per frame
@@ -31,6 +34,8 @@ public class Score_Counter : MonoBehaviour
             Count = Count + 10;
         }
         SetCountText();
+        
+
     }
 
 	void OnGUI()

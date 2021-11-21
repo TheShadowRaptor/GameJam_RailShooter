@@ -59,13 +59,17 @@ public class Lerp : MonoBehaviour
     //initalize Image render
     public SpriteRenderer renderer;
 
+    //share script values to another
+    public GameObject mananger;
+    
     //======================================+=========================================
 
     // Start is called before the first frame update
     void Start()
     {
         //Grabs the renderer of the sprite
-        renderer = GetComponent<SpriteRenderer>();          
+        renderer = GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
@@ -137,7 +141,9 @@ public class Lerp : MonoBehaviour
 
             if (isEnemy == true)
             {
+
                 EnemyDest();
+                
             }
 
             //Resets Timer
@@ -150,12 +156,15 @@ public class Lerp : MonoBehaviour
             transform.localScale = new Vector2(Mathf.Lerp(minScaleX, maxScaleX, lerpTime), Mathf.Lerp(minScaleY, maxScaleY, lerpTime));
             transform.position = new Vector2(Mathf.Lerp(minPosX, maxPosX, lerpTime), Mathf.Lerp(minPosY, maxPosY, lerpTime));
 
+           
+
             //Makes image grow over a set time
             lerpTime += lerpTime * Time.deltaTime;
 
             //Checks if maximum was reached
             if (this.transform.localScale.x >= maxScaleX && this.transform.localScale.y <= maxScaleY)
             {
+             
                 lerp = false;
             }           
             
@@ -164,6 +173,7 @@ public class Lerp : MonoBehaviour
         //Detects if lerp is deactivated
         if (lerp == false)
         {
+
             //Picks a random spawn point           
             minPosX = Random.Range(minPosRangeX, maxPosRangeX);
             minPosY = Random.Range(minPosRangeY, maxPosRangeY);

@@ -10,6 +10,12 @@ public class Health_System : MonoBehaviour
     bool gameOver = false;
     public int damageTaken = 1;
     public int pickUp = 1;
+
+    public bool enemyPassed = false;
+
+    public GameObject heartOne;
+    public GameObject heartTwo;
+    public GameObject heartThree;
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -17,8 +23,12 @@ public class Health_System : MonoBehaviour
     void Update()
     {
         Health();
-        TakeDamage();
-        HealthPickUp();
+        if (enemyPassed == true)
+        {
+            TakeDamage();
+        }
+        HealthCondition();
+     
     }
 
     //User health, and ranged checked for neg number and turns it back to 0
@@ -28,7 +38,7 @@ public class Health_System : MonoBehaviour
         //change Input.GetKeyDown to when the enemys gets behind the screen or dont use this one because takedamage does the same thing
         if (Input.GetKeyDown(KeyCode.A))
         {
-            hearts = hearts - 1;
+            hearts = hearts - 3;
             Debug.Log(" - 1 heart " + hearts + " Health left");
         }
         
@@ -50,12 +60,11 @@ public class Health_System : MonoBehaviour
     //damage delt by enemy to player
     void TakeDamage()
     {
-        //change Input.GetKeyDown to when the enemys gets behind the screen
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            hearts = hearts - damageTaken;
+        //if enemies size reaches 8X/8Y
+        
+            hearts = hearts - 1;
             Debug.Log("YOU TOOK DAMAGE, " + hearts + " Hearts Left");
-        }
+            enemyPassed = false;   
     }
 
     //funtion for medpacks or any healthpickups if thats what we choose to add later on
@@ -66,6 +75,37 @@ public class Health_System : MonoBehaviour
         {
             hearts = hearts + 1;
             Debug.Log("You healed");
+        }
+    }
+
+    void HealthCondition()
+    {
+        if (hearts == 3)
+        {
+            heartOne.SetActive(true);
+            heartTwo.SetActive(true);
+            heartThree.SetActive(true);
+        }
+
+        else if (hearts == 2)
+        {
+            heartOne.SetActive(true);
+            heartTwo.SetActive(true);
+            heartThree.SetActive(false);
+        }
+
+        else if (hearts == 1)
+        {
+            heartOne.SetActive(true);
+            heartTwo.SetActive(false);
+            heartThree.SetActive(false);
+        }
+
+        else if (hearts == 0)
+        {
+            heartOne.SetActive(false);
+            heartTwo.SetActive(false);
+            heartThree.SetActive(false);
         }
     }
 }
