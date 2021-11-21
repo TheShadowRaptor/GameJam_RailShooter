@@ -109,11 +109,29 @@ public class Lerp : MonoBehaviour
                 if (minPosX > 0)
                 {
                     maxPosX = minPosX + 15f;
+                    if (maxPosRangeX == 2)
+                    {
+                        maxPosX = minPosX + 50;
+                    }
+
+                    if (maxPosRangeX == 3)
+                    {
+                        maxPosX = minPosX + 85;
+                    }
                 }
 
                 if (minPosX < 0)
                 {
                     maxPosX = minPosX + -15;
+                    if (maxPosRangeX == -2)
+                    {
+                        maxPosX = minPosX - 50;
+                    }
+
+                    if (maxPosRangeX == -3)
+                    {
+                        maxPosX = minPosX - 85;
+                    }
                 }
             }
 
